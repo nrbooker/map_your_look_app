@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Cheeks
+    <a href="/cheeks/new" class="btn btn-lg btn-success">New Cheek</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Look</th>
+        <th>Store</th>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @cheeks.each do |cheek| %>
+      <tr>
+        <td><%= cheek.look_id %></td>
+        <td><%= cheek.store %></td>
+        <td><%= cheek.brand %></td>
+        <td><%= cheek.color %></td>
+        <td>
+          <a href="/cheeks/<%= cheek.id %>" class="btn btn-primary">Show</a>
+          <a href="/cheeks/<%= cheek.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_cheek/<%= cheek.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

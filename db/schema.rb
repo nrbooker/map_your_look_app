@@ -11,9 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827010414) do
+ActiveRecord::Schema.define(version: 20150827180211) do
+
+  create_table "cheeks", force: :cascade do |t|
+    t.integer  "look_id"
+    t.string   "store"
+    t.string   "brand"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "eyes", force: :cascade do |t|
+    t.integer  "look_id"
+    t.string   "store"
+    t.string   "brand"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "items", force: :cascade do |t|
+    t.integer  "look_id"
+    t.string   "store"
+    t.string   "brand"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lips", force: :cascade do |t|
     t.integer  "look_id"
     t.string   "store"
     t.string   "brand"

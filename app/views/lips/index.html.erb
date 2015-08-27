@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Lips
+    <a href="/lips/new" class="btn btn-lg btn-success">New Lip</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Look</th>
+        <th>Store</th>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @lips.each do |lip| %>
+      <tr>
+        <td><%= lip.look_id %></td>
+        <td><%= lip.store %></td>
+        <td><%= lip.brand %></td>
+        <td><%= lip.color %></td>
+        <td>
+          <a href="/lips/<%= lip.id %>" class="btn btn-primary">Show</a>
+          <a href="/lips/<%= lip.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_lip/<%= lip.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
