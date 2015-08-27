@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Looks
+    <a href="/looks/new" class="btn btn-lg btn-success">New Look</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Category</th>
+        <th>User</th>
+        <th>Notes</th>
+        <th>Used on</th>
+        <th>Selfie</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @looks.each do |look| %>
+      <tr>
+        <td><%= look.category %></td>
+        <td><%= look.user_id %></td>
+        <td><%= look.notes %></td>
+        <td><%= look.used_on %></td>
+        <td><%= look.selfie %></td>
+        <td>
+          <a href="/looks/<%= look.id %>" class="btn btn-primary">Show</a>
+          <a href="/looks/<%= look.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_look/<%= look.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

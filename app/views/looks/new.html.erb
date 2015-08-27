@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @look.errors.any? %>
+  <% @look.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Look</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_look" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for category -->
+      <div class="form-group">
+        <label for="category" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category" name="category" placeholder="Category" class="form-control" value="<%= @look.category %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @look.user_id %>">
+      </div>
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @look.notes %></textarea>
+      </div>
+
+      <!-- Label and input for used_on -->
+      <div class="form-group">
+        <label for="used_on" class="control-label">
+          Used on
+        </label>
+
+        <input type="text" id="used_on" name="used_on" placeholder="Used on" class="form-control" value="<%= @look.used_on %>">
+      </div>
+
+      <!-- Label and input for selfie -->
+      <div class="form-group">
+        <label for="selfie" class="control-label">
+          Selfie
+        </label>
+
+        <input type="text" id="selfie" name="selfie" placeholder="Selfie" class="form-control" value="<%= @look.selfie %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Look
+      </button>
+      or
+      <a href="/looks">Cancel</a>
+    </form>
+  </div>
+</div>

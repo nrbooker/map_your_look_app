@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Look #<%= @look.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Category</dt>
+      <dd><%= @look.category %></dd>
+
+      <dt>User</dt>
+      <dd><%= @look.user_id %></dd>
+
+      <dt>Notes</dt>
+      <dd><%= @look.notes %></dd>
+
+      <dt>Used on</dt>
+      <dd><%= @look.used_on %></dd>
+
+      <dt>Selfie</dt>
+      <dd><%= @look.selfie %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/looks" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/looks/<%= @look.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_look/<%= @look.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
