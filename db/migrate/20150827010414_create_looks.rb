@@ -2,7 +2,7 @@ class CreateLooks < ActiveRecord::Migration
   def change
     create_table :looks do |t|
       t.string :category
-      t.integer :user_id
+      t.belongs_to :user
       t.text :notes
       t.date :used_on
       t.string :selfie

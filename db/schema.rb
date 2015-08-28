@@ -11,40 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827180211) do
+ActiveRecord::Schema.define(version: 20150828030652) do
 
-  create_table "cheeks", force: :cascade do |t|
-    t.integer  "look_id"
+  create_table "cheek_items", force: :cascade do |t|
     t.string   "store"
     t.string   "brand"
     t.string   "color"
+    t.integer  "cheek_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cheeks", force: :cascade do |t|
+    t.integer  "look_id"
+    t.string   "selfie"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "eye_items", force: :cascade do |t|
+    t.string   "store"
+    t.string   "brand"
+    t.string   "color"
+    t.integer  "eye_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "eyes", force: :cascade do |t|
     t.integer  "look_id"
-    t.string   "store"
-    t.string   "brand"
-    t.string   "color"
+    t.string   "selfie"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "items", force: :cascade do |t|
-    t.integer  "look_id"
+  create_table "lip_items", force: :cascade do |t|
     t.string   "store"
     t.string   "brand"
     t.string   "color"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "lip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lips", force: :cascade do |t|
     t.integer  "look_id"
-    t.string   "store"
-    t.string   "brand"
-    t.string   "color"
+    t.string   "selfie"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,6 +69,11 @@ ActiveRecord::Schema.define(version: 20150827180211) do
     t.string   "selfie"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

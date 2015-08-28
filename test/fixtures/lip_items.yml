@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store: MyString
+  brand: MyString
+  color: MyString
+  lip_id: 1
+
+two:
+  store: MyString
+  brand: MyString
+  color: MyString
+  lip_id: 1
