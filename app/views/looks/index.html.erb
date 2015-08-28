@@ -38,10 +38,10 @@
 </div>
 
 <%else%>
-<h1>Log in</h1>
+<h1 class="page-header">Log in</h1>
 
-<div class="row", id = "login_form">
-  <div class="col-md-6 col-md-offset-3">
+<div class="row">
+  <div class="col-md-12">
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :username, "Username" %>
@@ -50,8 +50,8 @@
       <%= f.label :password, "Password" %>
       <%= f.password_field :password, class: 'form-control' %>
       <br>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
+      <%= f.submit "Log in",  class: "btn btn-lg btn-success" %>
+    <% end %><br>
 
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
