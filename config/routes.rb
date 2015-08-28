@@ -5,7 +5,8 @@ get "/", :controller => "looks", :action => "index"
   # Routes for the Eye resource:
   # CREATE
   get "/eyes/new", :controller => "eyes", :action => "new"
-  post "/create_eye", :controller => "eyes", :action => "create"
+  # post "/create_eye", :controller => "eyes", :action => "create"
+  post "/eyes", :controller => "eyes", :action => "create"
 
   # READ
   get "/eyes", :controller => "eyes", :action => "index"

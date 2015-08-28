@@ -14,9 +14,9 @@ class EyesController < ApplicationController
   def create
     @eye = Eye.new
     @eye.look_id = params[:look_id]
-    @eye.store = params[:store]
-    @eye.brand = params[:brand]
-    @eye.color = params[:color]
+    # @eye.store = params[:store]
+    # @eye.brand = params[:brand]
+    # @eye.color = params[:color]
 
     if @eye.save
       redirect_to "/eyes", :notice => "Eye created successfully."
@@ -33,15 +33,15 @@ class EyesController < ApplicationController
     @eye = Eye.find(params[:id])
 
     @eye.look_id = params[:look_id]
-    @eye.store = params[:store]
-    @eye.brand = params[:brand]
-    @eye.color = params[:color]
+    # @eye.store = params[:store]
+    # @eye.brand = params[:brand]
+    # @eye.color = params[:color]
 
-    if @eye.save
-      redirect_to "/eyes", :notice => "Eye updated successfully."
-    else
-      render 'edit'
-    end
+    # if @eye.save
+    #   redirect_to "/eyes", :notice => "Eye updated successfully."
+    # else
+    #   render 'edit'
+    # end
   end
 
   def destroy
