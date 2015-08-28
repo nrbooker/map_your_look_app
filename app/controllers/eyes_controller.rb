@@ -46,7 +46,6 @@ class EyesController < ApplicationController
 
   def destroy
     @eye = Eye.find(params[:id])
-
     @eye.destroy
 
     redirect_to "/eyes", :notice => "Eye deleted."

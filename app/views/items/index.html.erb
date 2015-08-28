@@ -10,6 +10,7 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Looks</th>
+        <th>Browse Catalogs</th>
         <th>Add to Catalog</th>
         <!-- <th>Brand</th>
         <th>Color</th>
@@ -19,22 +20,36 @@
       <% @items.each do |item| %>
       <tr>
       <td>
+      <a href="/eyes/wallpaper" class="btn btn-primary"> View All Eye Looks</a>
+      </td>
+      <td>
       <a href="/eyes" class="btn btn-primary"> Browse Eyes Catalog</a>
       </td>
       <td><a href="/eyes/new" class="btn btn-primary"> Add New Eye Make Up </a></td>
 
       <tr>
+      <td>
+      <a href="/cheeks/wallpaper" class="btn btn-primary"> View All Cheek Looks</a>
+      </td>
 <td>
       <a href="/cheeks" class="btn btn-primary">Browse Cheeks Catalog</a> </td>
       <td><a href="/cheeks/new" class="btn btn-primary"> Add New Bronzer or Blush </a></td>
 </tr>
-      <tr><td>
+      <tr>
+<td>
+      <a href="/lips/wallpaper" class="btn btn-primary"> View All Lip Looks</a>
+      </td>
+      <td>
       <a href="/lips" class="btn btn-primary">Browse Lips Catalog</a>
       </td>
 <td><a href="/lips/new" class="btn btn-primary"> Add New Lipstick </a></td>
 
       </tr>
-      <tr><td>
+      <tr>
+<td>
+      <a href="/looks/wallpaper" class="btn btn-primary"> View All Total Looks</a>
+      </td>
+      <td>
       <a href="/looks" class="btn btn-primary">Browse Total Looks Catalog</a>
       </td>
 <td><a href="/looks/new" class="btn btn-primary"> Add New Full Facials </a></td>

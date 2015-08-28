@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   # READ
   get "/cheeks", :controller => "cheeks", :action => "index"
   get "/cheeks/:id", :controller => "cheeks", :action => "show"
+  get "/cheeks/wallpaper", :controller => "eyes", :action => "wallpaper"
+
 
   # UPDATE
   get "/cheeks/:id/edit", :controller => "cheeks", :action => "edit"
@@ -41,6 +43,8 @@ Rails.application.routes.draw do
   # READ
   get "/lips", :controller => "lips", :action => "index"
   get "/lips/:id", :controller => "lips", :action => "show"
+  get "/lips/wallpaper", :controller => "eyes", :action => "wallpaper"
+
 
   # UPDATE
   get "/lips/:id/edit", :controller => "lips", :action => "edit"
@@ -61,6 +65,8 @@ Rails.application.routes.draw do
   # READ
   get "/looks", :controller => "looks", :action => "index"
   get "/looks/:id", :controller => "looks", :action => "show"
+get "/looks/wallpaper", :controller => "eyes", :action => "wallpaper"
+
 
   # UPDATE
   get "/looks/:id/edit", :controller => "looks", :action => "edit"
