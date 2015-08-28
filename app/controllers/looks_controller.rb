@@ -13,13 +13,8 @@ class LooksController < ApplicationController
   end
 
   def create
-    @look = Look.new
-    @look.category = params[:category]
-    @look.user_id = params[:user_id]
-    @look.notes = params[:notes]
-    @look.used_on = params[:used_on]
-    @look.selfie = params[:selfie]
-
+    @look = Look.new(look_params)
+    @look.update_attributes(user: current_user)
     if @look.save
       redirect_to "/looks", :notice => "Look created successfully."
     else
@@ -33,12 +28,7 @@ class LooksController < ApplicationController
 
   def update
     @look = Look.find(params[:id])
-
-    @look.category = params[:category]
-    @look.user_id = params[:user_id]
-    @look.notes = params[:notes]
-    @look.used_on = params[:used_on]
-    @look.selfie = params[:selfie]
+    @look.update_attributes(look_params)
 
     if @look.save
       redirect_to "/looks", :notice => "Look updated successfully."
@@ -53,5 +43,9 @@ class LooksController < ApplicationController
     @look.destroy
 
     redirect_to "/looks", :notice => "Look deleted."
+  end
+
+  def look_params
+    params.require(:look).permit(:category, :user, :notes, :used_on, :selfie)
   end
 end

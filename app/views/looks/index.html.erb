@@ -22,10 +22,10 @@
       <% @looks.each do |look| %>
       <tr>
         <td><%= look.category %></td>
-        <td><%= look.user %></td>
+        <td><%= look.user.username %></td>
         <td><%= look.notes %></td>
         <td><%= look.used_on %></td>
-        <td><%= look.selfie %></td>
+        <td><%= image_tag(look.selfie) %></td>
         <td>
           <a href="/looks/<%= look.id %>" class="btn btn-primary">Show</a>
           <a href="/looks/<%= look.id %>/edit" class="btn btn-warning">Edit</a>
