@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Cheek Item #<%= @cheek_item.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Makeup Type</dt>
+      <dd><%= @cheek_item.store %></dd>
+
+      <dt>Brand</dt>
+      <dd><%= @cheek_item.brand %></dd>
+
+      <dt>Color</dt>
+      <dd><%= @cheek_item.color %></dd>
+
+      <dt>Cheek</dt>
+      <dd><%= @cheek_item.cheek_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/cheek_items" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/cheek_items/<%= @cheek_item.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_cheek_item/<%= @cheek_item.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

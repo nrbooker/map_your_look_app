@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Luscious Lips
+    <a href="/lip_items/new" class="btn btn-lg btn-success">New Smooches</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Makeup Type</th>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Lip</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @lip_items.each do |lip_item| %>
+      <tr>
+        <td><%= lip_item.store %></td>
+        <td><%= lip_item.brand %></td>
+        <td><%= lip_item.color %></td>
+        <td><%= lip_item.lip_id %></td>
+        <td>
+          <a href="/lip_items/<%= lip_item.id %>" class="btn btn-primary">Show</a>
+          <a href="/lip_items/<%= lip_item.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_lip_item/<%= lip_item.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

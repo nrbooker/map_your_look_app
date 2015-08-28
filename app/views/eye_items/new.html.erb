@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @eye_item.errors.any? %>
+  <% @eye_item.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Eye Item</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_eye_item" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for store -->
+      <div class="form-group">
+        <label for="store" class="control-label">
+          Makeup Type
+        </label>
+
+        <input type="text" id="store" name="store" placeholder="Makeup Type" class="form-control" value="<%= @eye_item.store %>">
+      </div>
+
+      <!-- Label and input for brand -->
+      <div class="form-group">
+        <label for="brand" class="control-label">
+          Brand
+        </label>
+
+        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @eye_item.brand %>">
+      </div>
+
+      <!-- Label and input for color -->
+      <div class="form-group">
+        <label for="color" class="control-label">
+          Color
+        </label>
+
+        <input type="text" id="color" name="color" placeholder="Color" class="form-control" value="<%= @eye_item.color %>">
+      </div>
+
+      <!-- Label and input for eye_id -->
+      <div class="form-group">
+        <label for="eye_id" class="control-label">
+          Eye
+        </label>
+
+        <input type="text" id="eye_id" name="eye_id" placeholder="Eye" class="form-control" value="<%= @eye_item.eye_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Eye Item
+      </button>
+      or
+      <a href="/eye_items">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Mysterious Eyes
+    <a href="/eye_items/new" class="btn btn-lg btn-success">Add New Look</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Makeup Type</th>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Eye</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @eye_items.each do |eye_item| %>
+      <tr>
+        <td><%= eye_item.store %></td>
+        <td><%= eye_item.brand %></td>
+        <td><%= eye_item.color %></td>
+        <td><%= eye_item.eye_id %></td>
+        <td>
+          <a href="/eye_items/<%= eye_item.id %>" class="btn btn-primary">Show</a>
+          <a href="/eye_items/<%= eye_item.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_eye_item/<%= eye_item.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

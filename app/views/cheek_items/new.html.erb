@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @cheek_item.errors.any? %>
+  <% @cheek_item.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Cheek Item</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_cheek_item" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for store -->
+      <div class="form-group">
+        <label for="store" class="control-label">
+          Makeup Type
+        </label>
+
+        <input type="text" id="store" name="store" placeholder="Makeup Type" class="form-control" value="<%= @cheek_item.store %>">
+      </div>
+
+      <!-- Label and input for brand -->
+      <div class="form-group">
+        <label for="brand" class="control-label">
+          Brand
+        </label>
+
+        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @cheek_item.brand %>">
+      </div>
+
+      <!-- Label and input for color -->
+      <div class="form-group">
+        <label for="color" class="control-label">
+          Color
+        </label>
+
+        <input type="text" id="color" name="color" placeholder="Color" class="form-control" value="<%= @cheek_item.color %>">
+      </div>
+
+      <!-- Label and input for cheek_id -->
+      <div class="form-group">
+        <label for="cheek_id" class="control-label">
+          Cheek
+        </label>
+
+        <input type="text" id="cheek_id" name="cheek_id" placeholder="Cheek" class="form-control" value="<%= @cheek_item.cheek_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Cheek Item
+      </button>
+      or
+      <a href="/cheek_items">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Lip Item #<%= @lip_item.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Makeup Type</dt>
+      <dd><%= @lip_item.store %></dd>
+
+      <dt>Brand</dt>
+      <dd><%= @lip_item.brand %></dd>
+
+      <dt>Color</dt>
+      <dd><%= @lip_item.color %></dd>
+
+      <dt>Lip</dt>
+      <dd><%= @lip_item.lip_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/lip_items" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/lip_items/<%= @lip_item.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_lip_item/<%= @lip_item.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

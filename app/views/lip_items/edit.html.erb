@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @lip_item.errors.any? %>
+  <% @lip_item.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Lip Item #<%= @lip_item.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_lip_item/<%= @lip_item.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for store -->
+      <div class="form-group">
+        <label for="store" class="control-label">
+          Makeup Type
+        </label>
+
+        <input type="text" id="store" name="store" placeholder="Makeup Type" class="form-control" value="<%= @lip_item.store %>">
+      </div>
+
+      <!-- Label and input for brand -->
+      <div class="form-group">
+        <label for="brand" class="control-label">
+          Brand
+        </label>
+
+        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @lip_item.brand %>">
+      </div>
+
+      <!-- Label and input for color -->
+      <div class="form-group">
+        <label for="color" class="control-label">
+          Color
+        </label>
+
+        <input type="text" id="color" name="color" placeholder="Color" class="form-control" value="<%= @lip_item.color %>">
+      </div>
+
+      <!-- Label and input for lip_id -->
+      <div class="form-group">
+        <label for="lip_id" class="control-label">
+          Lip
+        </label>
+
+        <input type="text" id="lip_id" name="lip_id" placeholder="Lip" class="form-control" value="<%= @lip_item.lip_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Lip Item
+      </button>
+      or
+      <a href="/lip_items/<%= @lip_item.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
