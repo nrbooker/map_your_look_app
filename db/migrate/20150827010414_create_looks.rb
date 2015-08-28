@@ -4,7 +4,7 @@ class CreateLooks < ActiveRecord::Migration
       t.string :category
       t.belongs_to :user
       t.text :notes
-      t.date :used_on
+      t.text :used_on
       t.string :selfie
 
       t.timestamps
