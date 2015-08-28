@@ -48,8 +48,13 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/edit">Dummy Edit Profile Link</a></li>
-          <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Dummy Sign Out Link</a></li>
+          <%if current_user%>
+            <li><%= link_to "signed in as #{current_user.username}", "/users/#{current_user.id}"%></li>
+            <li><%= link_to "Logout", '/logout', {method: :delete} %></li>
+          <%else%>
+            <li><%= link_to "Sign Up", '/signup' %></li>
+            <li><%= link_to "Login", '/login' %></li>
+          <%end%>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>

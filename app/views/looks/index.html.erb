@@ -1,3 +1,5 @@
+<%if current_user %>
+
 <div class="page-header">
   <h1>
     Total Looks / Full Facials
@@ -20,7 +22,7 @@
       <% @looks.each do |look| %>
       <tr>
         <td><%= look.category %></td>
-        <td><%= look.user_id %></td>
+        <td><%= look.user %></td>
         <td><%= look.notes %></td>
         <td><%= look.used_on %></td>
         <td><%= look.selfie %></td>
@@ -34,3 +36,25 @@
     </table>
   </div>
 </div>
+
+<%else%>
+<h1>Log in</h1>
+
+<div class="row", id = "login_form">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :username, "Username" %>
+      <%= f.text_field :username, class: 'form-control' %>
+
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <br>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
+
+<%end%>
