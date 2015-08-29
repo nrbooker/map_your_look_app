@@ -7,7 +7,9 @@ post   'login'   => 'sessions#create'
 delete 'logout'  => 'sessions#destroy'
 
 resources :users
+resources :eye_items
 resources :looks do
+  resources :eyes
   resources :eye_items
 end
 

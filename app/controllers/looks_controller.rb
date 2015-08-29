@@ -6,6 +6,8 @@ class LooksController < ApplicationController
 
   def show
     @look = Look.find(params[:id])
+    @eye_items = @look.eye_items
+    @eye = Eye.new
   end
 
   def new

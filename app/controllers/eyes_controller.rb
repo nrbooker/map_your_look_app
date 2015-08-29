@@ -12,14 +12,16 @@ class EyesController < ApplicationController
   end
 
   def create
-    @eye = Eye.new
-    @eye.look_id = params[:look_id]
+
+    @look = Look.find(params["look_id"].to_i)
+    @eye_item = EyeItem.find(params["eye"]["id"].to_i)
+    @eye = Eye.new(look: @look, eye_item: @eye_item)
     # @eye.store = params[:store]
     # @eye.brand = params[:brand]
     # @eye.color = params[:color]
 
     if @eye.save
-      redirect_to "/eyes", :notice => "Eye created successfully."
+      redirect_to look_path(@look), :notice => "Eye created successfully."
     else
       render 'new'
     end
