@@ -38,7 +38,7 @@
 
 <%=form_for ([@look, @eye]) do |f|%>
   <%= f.label :look, "Look" %><br>
-  <%= f.collection_select :id, EyeItem.all.order(:store),:id,:store, include_blank: true %><br>
+  <%= f.collection_select :id, EyeItem.all.order(:color),:id,:color, include_blank: true %><br>
   <%= f.submit "Add Makeup", class: "btn btn-success" %>
 or
   <a href="/looks">Cancel</a>

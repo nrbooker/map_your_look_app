@@ -31,10 +31,9 @@ class EyeItemsController < ApplicationController
   def update
     @eye_item = EyeItem.find(params[:id])
 
-    @eye_item.store = params[:store]
-    @eye_item.brand = params[:brand]
-    @eye_item.color = params[:color]
-    @eye_item.eye_id = params[:eye_id]
+    @eye_item.store = params[:eye_item][:store]
+    @eye_item.brand = params[:eye_item][:brand]
+    @eye_item.color = params[:eye_item][:color]
 
     if @eye_item.save
       redirect_to "/eye_items", :notice => "Eye item updated successfully."
