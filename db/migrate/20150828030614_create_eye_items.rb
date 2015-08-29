@@ -4,7 +4,6 @@ class CreateEyeItems < ActiveRecord::Migration
       t.string :store
       t.string :brand
       t.string :color
-      t.belongs_to :eye
 
       t.timestamps null: false
     end

@@ -4,7 +4,6 @@ class CreateCheekItems < ActiveRecord::Migration
       t.string :store
       t.string :brand
       t.string :color
-      t.belongs_to :cheek
 
       t.timestamps null: false
     end

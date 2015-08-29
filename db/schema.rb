@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20150828030652) do
     t.string   "store"
     t.string   "brand"
     t.string   "color"
-    t.integer  "cheek_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150828030652) do
   create_table "cheeks", force: :cascade do |t|
     t.integer  "look_id"
     t.string   "selfie"
+    t.integer  "cheek_item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20150828030652) do
     t.string   "store"
     t.string   "brand"
     t.string   "color"
-    t.integer  "eye_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150828030652) do
   create_table "eyes", force: :cascade do |t|
     t.integer  "look_id"
     t.string   "selfie"
+    t.integer  "eye_item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20150828030652) do
     t.string   "store"
     t.string   "brand"
     t.string   "color"
-    t.integer  "lip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150828030652) do
   create_table "lips", force: :cascade do |t|
     t.integer  "look_id"
     t.string   "selfie"
+    t.integer  "lip_item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

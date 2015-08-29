@@ -3,6 +3,7 @@ class CreateEyes < ActiveRecord::Migration
     create_table :eyes do |t|
       t.belongs_to :look
       t.string :selfie
+      t.belongs_to :eye_item
 
       t.timestamps
 

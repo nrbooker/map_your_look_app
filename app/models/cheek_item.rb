@@ -1,5 +1,6 @@
 class CheekItem < ActiveRecord::Base
 
-belongs_to :cheek
+has_many :cheeks
+has_many :looks, through: :cheeks
 
 end

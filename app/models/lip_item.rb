@@ -1,5 +1,6 @@
 class LipItem < ActiveRecord::Base
 
-belongs_to :lip
+has_many :lips
+has_many :looks, through: :lips
 
 end

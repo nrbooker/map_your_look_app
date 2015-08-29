@@ -1,5 +1,6 @@
 class EyeItem < ActiveRecord::Base
 
-belongs_to :eye
+has_many :eyes
+has_many :looks, through: :eyes
 
 end
