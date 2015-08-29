@@ -12,14 +12,16 @@ class CheeksController < ApplicationController
   end
 
   def create
-    @cheek = Cheek.new
-    @cheek.look_id = params[:look_id]
-    @cheek.store = params[:store]
-    @cheek.brand = params[:brand]
-    @cheek.color = params[:color]
+
+    @look = Look.find(params["look_id"].to_i)
+    @cheek_item = CheekItem.find(params["cheek"]["id"].to_i)
+    @cheek = Cheek.new(look: @look, cheek_item: @cheek_item)
+    # @cheek.store = params[:store]
+    # @cheek.brand = params[:brand]
+    # @cheek.color = params[:color]
 
     if @cheek.save
-      redirect_to "/cheeks", :notice => "Cheek created successfully."
+      redirect_to look_path(@look), :notice => "Cheek created successfully."
     else
       render 'new'
     end
@@ -33,20 +35,19 @@ class CheeksController < ApplicationController
     @cheek = Cheek.find(params[:id])
 
     @cheek.look_id = params[:look_id]
-    @cheek.store = params[:store]
-    @cheek.brand = params[:brand]
-    @cheek.color = params[:color]
+    # @cheek.store = params[:store]
+    # @cheek.brand = params[:brand]
+    # @cheek.color = params[:color]
 
-    if @cheek.save
-      redirect_to "/cheeks", :notice => "Cheek updated successfully."
-    else
-      render 'edit'
-    end
+    # if @cheek.save
+    #   redirect_to "/cheeks", :notice => "Cheek updated successfully."
+    # else
+    #   render 'edit'
+    # end
   end
 
   def destroy
     @cheek = Cheek.find(params[:id])
-
     @cheek.destroy
 
     redirect_to "/cheeks", :notice => "Cheek deleted."

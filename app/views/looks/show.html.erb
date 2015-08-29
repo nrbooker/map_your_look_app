@@ -28,6 +28,8 @@
   </div>
 </div>
 
+<!-- Drop Down for Eye Looks -->
+
 <%=form_for ([@look, @eye]) do |f|%>
   <%= f.label :look, "Look" %><br>
   <%= f.collection_select :id, EyeItem.all.order(:color),:id,:color, include_blank: true %><br>
@@ -53,3 +55,60 @@ or
       <%end%>
   </div>
 </div>
+
+<!-- Drop Down for Cheek Looks -->
+
+<%=form_for ([@look, @cheek]) do |f|%>
+  <%= f.label :look, "Look" %><br>
+  <%= f.collection_select :id, CheekItem.all.order(:color),:id,:color, include_blank: true %><br>
+  <%= f.submit "Add Makeup", class: "btn btn-success" %>
+or
+  <a href="/looks">Cancel</a>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Store</th>
+        <th>Brand</th>
+        <th>Color</th>
+      </tr>
+      <% @cheek_items.each do |itemm| %>
+      <tr>
+        <td><%= itemm.store%></td>
+        <td><%= itemm.brand%></td>
+        <td><%= itemm.color%></td>
+      </tr>
+      <%end%>
+  </div>
+</div>
+
+<!-- Drop Down for Lips Looks -->
+
+<%=form_for ([@look, @lip]) do |f|%>
+  <%= f.label :look, "Look" %><br>
+  <%= f.collection_select :id, LipItem.all.order(:color),:id,:color, include_blank: true %><br>
+  <%= f.submit "Add Makeup", class: "btn btn-success" %>
+or
+  <a href="/looks">Cancel</a>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Store</th>
+        <th>Brand</th>
+        <th>Color</th>
+      </tr>
+      <% @lip_items.each do |itemmm| %>
+      <tr>
+        <td><%= itemmm.store%></td>
+        <td><%= itemmm.brand%></td>
+        <td><%= itemmm.color%></td>
+      </tr>
+      <%end%>
+  </div>
+</div>
+

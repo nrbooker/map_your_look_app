@@ -12,14 +12,16 @@ class LipsController < ApplicationController
   end
 
   def create
-    @lip = Lip.new
-    @lip.look_id = params[:look_id]
-    @lip.store = params[:store]
-    @lip.brand = params[:brand]
-    @lip.color = params[:color]
+
+    @look = Look.find(params["look_id"].to_i)
+    @lip_item = LipItem.find(params["lip"]["id"].to_i)
+    @lip = Lip.new(look: @look, lip_item: @lip_item)
+    # @lip.store = params[:store]
+    # @lip.brand = params[:brand]
+    # @lip.color = params[:color]
 
     if @lip.save
-      redirect_to "/lips", :notice => "Lip created successfully."
+      redirect_to look_path(@look), :notice => "Lip created successfully."
     else
       render 'new'
     end
@@ -33,20 +35,19 @@ class LipsController < ApplicationController
     @lip = Lip.find(params[:id])
 
     @lip.look_id = params[:look_id]
-    @lip.store = params[:store]
-    @lip.brand = params[:brand]
-    @lip.color = params[:color]
+    # @lip.store = params[:store]
+    # @lip.brand = params[:brand]
+    # @lip.color = params[:color]
 
-    if @lip.save
-      redirect_to "/lips", :notice => "Lip updated successfully."
-    else
-      render 'edit'
-    end
+    # if @lip.save
+    #   redirect_to "/lips", :notice => "Lip updated successfully."
+    # else
+    #   render 'edit'
+    # end
   end
 
   def destroy
     @lip = Lip.find(params[:id])
-
     @lip.destroy
 
     redirect_to "/lips", :notice => "Lip deleted."
