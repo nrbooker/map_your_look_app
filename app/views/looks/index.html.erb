@@ -11,10 +11,9 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Category</th>
-        <th>User</th>
+        <th>Season</th>
         <th>Notes</th>
-        <th>Used on</th>
+        <th>Event</th>
         <th>Selfie</th>
         <th>Actions</th>
       </tr>
@@ -22,7 +21,6 @@
       <% @looks.each do |look| %>
       <tr>
         <td><%= look.category %></td>
-        <td><%= look.user.username %></td>
         <td><%= look.notes %></td>
         <td><%= look.used_on %></td>
         <td><%= image_tag(look.selfie)%></td>

@@ -1,24 +1,16 @@
 <div class="page-header">
-  <h3>Look #<%= @look.id %></h3>
+  <h3> <%= @look.category %> <%= @look.used_on %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
-      <dt>Category</dt>
-      <dd><%= @look.category %></dd>
 
-      <dt>User</dt>
-      <dd><%= @look.user_id %></dd>
-
-      <dt>Notes</dt>
-      <dd><%= @look.notes %></dd>
-
-      <dt>Used on</dt>
-      <dd><%= @look.used_on %></dd>
 
       <dt>Selfie</dt>
       <dd><%= image_tag(@look.selfie) %></dd>
+      <dt>Notes</dt>
+      <dd><%= @look.notes %></dd>
 
     </dl>
 

@@ -15,11 +15,11 @@
 <div class="row">
   <div class="col-md-12">
   <%=form_for (@look), :html => {:multipart => true} do |f|%>
-  <%= f.label :category, "Category" %><br>
+  <%= f.label :category, "Season" %><br>
   <%= f.text_field :category, class: 'form-control'%><br>
   <%= f.label :notes, "Notes" %><br>
   <%= f.text_field :notes, class: 'form-control'%><br>
-  <%= f.label :used_on, "Occasion" %><br>
+  <%= f.label :used_on, "Event" %><br>
   <%= f.text_field :used_on, class: 'form-control'%><br>
   <%= f.label :selfie, "Selfie" %><br>
   <%= f.file_field :selfie, class: 'form-control' %><br>

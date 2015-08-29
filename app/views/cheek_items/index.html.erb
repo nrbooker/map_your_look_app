@@ -12,7 +12,6 @@
         <th>Makeup Type</th>
         <th>Brand</th>
         <th>Color</th>
-        <th></th>
         <th>Actions</th>
       </tr>
 
@@ -21,7 +20,7 @@
         <td><%= cheek_item.store %></td>
         <td><%= cheek_item.brand %></td>
         <td><%= cheek_item.color %></td>
-        <td><%= cheek_item.cheek_id %></td>
+
         <td>
           <a href="/cheek_items/<%= cheek_item.id %>" class="btn btn-primary">Show</a>
           <a href="/cheek_items/<%= cheek_item.id %>/edit" class="btn btn-warning">Edit</a>

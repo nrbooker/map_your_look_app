@@ -13,10 +13,9 @@ class CheekItemsController < ApplicationController
 
   def create
     @cheek_item = CheekItem.new
-    @cheek_item.store = params[:store]
-    @cheek_item.brand = params[:brand]
-    @cheek_item.color = params[:color]
-    @cheek_item.cheek_id = params[:cheek_id]
+    @cheek_item.store = params[:cheek_item][:store]
+    @cheek_item.brand = params[:cheek_item][:brand]
+    @cheek_item.color = params[:cheek_item][:color]
 
     if @cheek_item.save
       redirect_to "/cheek_items", :notice => "Cheek item created successfully."
@@ -32,10 +31,9 @@ class CheekItemsController < ApplicationController
   def update
     @cheek_item = CheekItem.find(params[:id])
 
-    @cheek_item.store = params[:store]
-    @cheek_item.brand = params[:brand]
-    @cheek_item.color = params[:color]
-    @cheek_item.cheek_id = params[:cheek_id]
+    @cheek_item.store = params[:cheek_item][:store]
+    @cheek_item.brand = params[:cheek_item][:brand]
+    @cheek_item.color = params[:cheek_item][:color]
 
     if @cheek_item.save
       redirect_to "/cheek_items", :notice => "Cheek item updated successfully."

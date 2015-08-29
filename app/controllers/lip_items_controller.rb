@@ -13,13 +13,12 @@ class LipItemsController < ApplicationController
 
   def create
     @lip_item = LipItem.new
-    @lip_item.store = params[:store]
-    @lip_item.brand = params[:brand]
-    @lip_item.color = params[:color]
-    @lip_item.lip_id = params[:lip_id]
+    @lip_item.store = params[:lip_item][:store]
+    @lip_item.brand = params[:lip_item][:brand]
+    @lip_item.color = params[:lip_item][:color]
 
     if @lip_item.save
-      redirect_to "/lip_items", :notice => "Lip item created successfully."
+      redirect_to "/lip_items", :notice => "Lip makeup created successfully."
     else
       render 'new'
     end
@@ -32,13 +31,12 @@ class LipItemsController < ApplicationController
   def update
     @lip_item = LipItem.find(params[:id])
 
-    @lip_item.store = params[:store]
-    @lip_item.brand = params[:brand]
-    @lip_item.color = params[:color]
-    @lip_item.lip_id = params[:lip_id]
+    @lip_item.store = params[:lip_item][:store]
+    @lip_item.brand = params[:lip_item][:brand]
+    @lip_item.color = params[:lip_item][:color]
 
     if @lip_item.save
-      redirect_to "/lip_items", :notice => "Lip item updated successfully."
+      redirect_to "/lip_items", :notice => "Lip makeup updated successfully."
     else
       render 'edit'
     end
@@ -49,6 +47,6 @@ class LipItemsController < ApplicationController
 
     @lip_item.destroy
 
-    redirect_to "/lip_items", :notice => "Lip item deleted."
+    redirect_to "/lip_items", :notice => "Lip makeup deleted."
   end
 end

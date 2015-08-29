@@ -13,6 +13,21 @@ resources :looks do
   resources :eye_items
 end
 
+resources :users
+resources :cheek_items
+resources :looks do
+  resources :cheeks
+  resources :cheek_items
+end
+
+resources :users
+resources :lip_items
+resources :looks do
+  resources :lips
+  resources :lip_items
+end
+
+
 get "/", :controller => "looks", :action => "index"
 
 # Routes for the Eye resource:
